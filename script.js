@@ -1,98 +1,90 @@
-// ===================================
-// TOMBOL MOTIVASI ACAK
-// ===================================
+// =============================
+// HAMBURGER MENU (NAVIGASI HP)
+// =============================
+const hamburger = document.getElementById('hamburger');
+const navMenu   = document.getElementById('nav-menu');
 
-// Daftar kata-kata motivasi
+hamburger.addEventListener('click', function () {
+  // Toggle class 'active' pada tombol dan 'open' pada nav
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('open');
+});
+
+// Tutup menu saat salah satu link diklik
+document.querySelectorAll('.nav-link').forEach(function (link) {
+  link.addEventListener('click', function () {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('open');
+  });
+});
+
+
+// =============================
+// SMOOTH SCROLL KE SECTION
+// Ini sudah diatur di CSS (scroll-behavior: smooth)
+// Script ini sebagai fallback dan untuk offset header
+// =============================
+document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  });
+});
+
+
+// =============================
+// TOMBOL MOTIVASI ACAK
+// =============================
 const motivasiList = [
-  "\"Belajar bukan tentang menjadi pintar, tapi tentang tidak menyerah.\" – Anonim",
-  "\"Kegagalan adalah guru terbaik yang pernah ada.\" – Thomas Edison",
-  "\"Satu langkah kecil hari ini lebih baik dari tidak melangkah sama sekali.\"",
-  "\"Ilmu itu cahaya. Terus nyalakan, jangan biarkan padam.\"",
-  "\"Kamu tidak perlu sempurna, kamu hanya perlu terus mencoba.\"",
-  "\"Kesulitan hari ini adalah kekuatan kamu di masa depan.\"",
-  "\"Kode pertamamu tidak harus bagus, yang penting jalan dulu!\" 😄",
-  "\"Belajar AI bukan soal robot, tapi soal memahami cara kerja dunia.\"",
+  "Belajarlah seolah kamu tidak pernah bisa cukup belajar. — Albert Einstein",
+  "Kesuksesan bukan kunci kebahagiaan. Kebahagiaanlah kunci kesuksesan. — Albert Schweitzer",
+  "Jangan takut gagal. Takutlah tidak pernah mencoba.",
+  "Satu langkah kecil setiap hari akan membawamu ke tujuan besar.",
+  "Ilmu yang bermanfaat adalah cahaya yang tidak pernah padam.",
+  "Konsistensi mengalahkan bakat yang tidak punya disiplin.",
+  "Impianmu tidak akan kadaluarsa. Mulailah hari ini.",
+  "Kamu lebih kuat dari yang kamu pikirkan. Teruslah berjalan.",
+  "Setiap ahli pernah menjadi pemula. Jangan menyerah.",
+  "Bukan tentang seberapa cerdas kamu, tapi seberapa keras kamu berusaha."
 ];
 
-const btnMotivasi = document.getElementById('btnMotivasi');
-const motivasiBox = document.getElementById('motivasiBox');
+const btnMotivasi  = document.getElementById('btnMotivasi');
+const motivasiBox  = document.getElementById('motivasiBox');
 
 btnMotivasi.addEventListener('click', function () {
-  // Pilih motivasi secara acak
+  // Ambil kutipan secara acak
   const acak = Math.floor(Math.random() * motivasiList.length);
-  motivasiBox.textContent = motivasiList[acak];
+  motivasiBox.textContent = '"' + motivasiList[acak] + '"';
 
-  // Tampilkan box dengan animasi ulang
+  // Tampilkan dengan animasi ulang (reset dulu animasi)
   motivasiBox.style.display = 'none';
-  // Paksa reflow agar animasi bisa diulang
+  // Trigger reflow agar animasi reset
   void motivasiBox.offsetWidth;
   motivasiBox.style.display = 'block';
 });
 
 
-// ===================================
-// MENU HAMBURGER (untuk HP)
-// ===================================
-
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', function () {
-  // Toggle class 'open' untuk menampilkan/menyembunyikan menu
-  navLinks.classList.toggle('open');
-});
-
-// Tutup menu saat salah satu link diklik
-navLinks.querySelectorAll('a').forEach(function (link) {
-  link.addEventListener('click', function () {
-    navLinks.classList.remove('open');
-  });
-});
-
-
-// ===================================
+// =============================
 // TOMBOL KEMBALI KE ATAS
-// ===================================
-
+// =============================
 const backToTop = document.getElementById('backToTop');
 
-// Tampilkan tombol saat user scroll ke bawah >300px
+// Tampilkan tombol saat scroll melebihi 300px
 window.addEventListener('scroll', function () {
-  if (window.scrollY > 300) {
-    backToTop.style.display = 'flex';
+  if (window.pageYOffset > 300) {
+    backToTop.classList.add('visible');
   } else {
-    backToTop.style.display = 'none';
+    backToTop.classList.remove('visible');
   }
 });
 
-// Scroll ke atas saat tombol diklik
+// Scroll ke paling atas saat diklik
 backToTop.addEventListener('click', function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-
-// ===================================
-// HIGHLIGHT LINK NAVIGASI AKTIF
-// ===================================
-
-// Ambil semua section dan link nav
-const sections  = document.querySelectorAll('section[id]');
-const navItems  = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', function () {
-  let posisiSekarang = window.scrollY + 80; // offset karena nav sticky
-
-  sections.forEach(function (sec) {
-    const atas   = sec.offsetTop;
-    const tinggi = sec.offsetHeight;
-    const id     = sec.getAttribute('id');
-
-    if (posisiSekarang >= atas && posisiSekarang < atas + tinggi) {
-      // Hapus aktif dari semua link dulu
-      navItems.forEach(a => a.classList.remove('active'));
-      // Kasih aktif ke link yang sesuai
-      const linkAktif = document.querySelector('.nav-links a[href="#' + id + '"]');
-      if (linkAktif) linkAktif.classList.add('active');
-    }
-  });
 });
