@@ -1,0 +1,503 @@
+/* ===================================
+   RESET & VARIABEL WARNA
+=================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hijau: #4a7c59;       /* warna utama */
+  --hijau-muda: #d8ead3;  /* background aksen */
+  --krem: #f7f4ef;        /* background utama */
+  --teks: #2d2d2d;
+  --teks-ringan: #666;
+  --putih: #ffffff;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --transition: 0.25s ease;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scroll bawaan CSS */
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--krem);
+  color: var(--teks);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ===================================
+   HEADER
+=================================== */
+header {
+  background: linear-gradient(135deg, var(--hijau) 0%, #2e5d3a 100%);
+  color: var(--putih);
+  text-align: center;
+  padding: 40px 20px 30px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.header-desc {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* ===================================
+   NAVIGASI
+=================================== */
+nav {
+  background: var(--putih);
+  box-shadow: var(--shadow);
+  position: sticky; /* nav ikut scroll */
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.nav-brand {
+  font-weight: 700;
+  color: var(--hijau);
+  font-size: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--teks);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Efek hover link navigasi */
+.nav-links a:hover {
+  background: var(--hijau-muda);
+  color: var(--hijau);
+}
+
+/* Tombol hamburger — tersembunyi di laptop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--teks);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ===================================
+   SECTION UMUM
+=================================== */
+.section {
+  padding: 70px 20px;
+}
+
+.alt-bg {
+  background-color: var(--hijau-muda); /* section selang-seling */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--hijau);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Garis bawah judul section */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--hijau);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+/* Wrapper konten tengah */
+.section > *:not(.section-title) {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===================================
+   HERO / HOME
+=================================== */
+.hero-section {
+  background: linear-gradient(160deg, #eaf3e7 0%, var(--krem) 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.greeting {
+  color: var(--hijau);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.hero-text h1 span {
+  color: var(--hijau);
+}
+
+.hero-sub {
+  color: var(--teks-ringan);
+  margin-bottom: 28px;
+  font-size: 0.97rem;
+}
+
+/* Tombol motivasi */
+.btn-motivasi {
+  background: var(--hijau);
+  color: var(--putih);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-motivasi:hover {
+  background: #3a6347;
+  transform: translateY(-2px); /* efek angkat */
+}
+
+/* Kotak kutipan motivasi */
+.motivasi-box {
+  margin-top: 20px;
+  background: var(--putih);
+  border-left: 4px solid var(--hijau);
+  padding: 14px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--teks-ringan);
+  text-align: left;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================
+   TENTANG SAYA
+=================================== */
+.about-card {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: var(--putih);
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.foto-wrap {
+  flex-shrink: 0;
+}
+
+/* Foto profil bulat */
+.foto-profil {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--hijau-muda);
+  box-shadow: 0 0 0 3px var(--hijau);
+}
+
+.biodata h3 {
+  font-size: 1.25rem;
+  color: var(--hijau);
+  margin-bottom: 14px;
+}
+
+/* Tabel biodata */
+.bio-table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.bio-table td {
+  padding: 4px 10px 4px 0;
+  vertical-align: top;
+}
+
+.bio-table td:first-child {
+  color: var(--teks-ringan);
+  white-space: nowrap;
+}
+
+.bio-table i {
+  width: 18px;
+  color: var(--hijau);
+}
+
+.bio-desc {
+  font-size: 0.9rem;
+  color: var(--teks-ringan);
+}
+
+/* ===================================
+   CARD GRID (Tugas & Materi)
+=================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--putih);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border-top: 4px solid var(--hijau);
+}
+
+/* Efek hover card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.card-tag {
+  font-size: 0.78rem;
+  color: var(--hijau);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.card p:not(.card-tag) {
+  font-size: 0.88rem;
+  color: var(--teks-ringan);
+  margin-bottom: 14px;
+}
+
+/* Badge status tugas */
+.badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-done     { background: #d4edda; color: #276d3d; }
+.badge-progress { background: #fff3cd; color: #856404; }
+.badge-pending  { background: #f8d7da; color: #842029; }
+
+/* ===================================
+   KONTAK
+=================================== */
+.kontak-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.kontak-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--putih);
+  padding: 18px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.kontak-item:hover {
+  transform: translateX(4px); /* geser sedikit saat hover */
+}
+
+.kontak-item i {
+  font-size: 1.4rem;
+  color: var(--hijau);
+  width: 28px;
+  text-align: center;
+}
+
+.kontak-label {
+  font-size: 0.78rem;
+  color: var(--teks-ringan);
+  margin-bottom: 2px;
+}
+
+.kontak-item a {
+  color: var(--teks);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.93rem;
+}
+
+.kontak-item a:hover {
+  color: var(--hijau);
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+footer {
+  background: #2e5d3a;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.88rem;
+}
+
+/* ===================================
+   TOMBOL BACK TO TOP
+=================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  background: var(--hijau);
+  color: var(--putih);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: none; /* tersembunyi dulu */
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform var(--transition);
+  z-index: 200;
+}
+
+.back-to-top:hover {
+  background: #3a6347;
+  transform: translateY(-3px);
+}
+
+/* ===================================
+   RESPONSIF UNTUK HP
+=================================== */
+@media (max-width: 700px) {
+
+  /* Hamburger muncul di HP */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Nav links tersembunyi, muncul saat aktif */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--putih);
+    padding: 12px 0;
+    box-shadow: var(--shadow);
+    gap: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    border-radius: 0;
+    padding: 12px 24px;
+    display: block;
+  }
+
+  /* Hero lebih kecil di HP */
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  /* About card jadi kolom */
+  .about-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 20px;
+    gap: 20px;
+  }
+
+  .bio-table {
+    text-align: left;
+  }
+}
