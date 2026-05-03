@@ -2,190 +2,224 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nova Suci Safitri | Teknik Informatika</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Icon dari Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Google Fonts: Nunito untuk body, Playfair Display untuk heading -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">🎓 Nova's Portfolio</div>
-      <p class="header-desc">Mahasiswa Teknik Informatika | Kecerdasan Buatan</p>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Nova Suci Safitri</span>
+      </div>
+      <!-- Navigasi desktop -->
+      <nav class="nav" id="nav-menu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#tugas" class="nav-link">Tugas</a>
+        <a href="#materi" class="nav-link">Materi</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+      <!-- Tombol hamburger untuk HP -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <!-- ===== NAVIGASI ===== -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <span class="nav-brand">Nova Suci</span>
-      <!-- Tombol hamburger untuk HP -->
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#tugas">Tugas</a></li>
-        <li><a href="#materi">Materi</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-      </ul>
+  <!-- ===== SECTION: HOME ===== -->
+  <section class="section hero" id="home">
+    <div class="container hero-content">
+      <p class="hero-sub">Selamat Datang di Website Kuliah</p>
+      <h1 class="hero-title">Kecerdasan Buatan<br /><span>Teknik Informatika</span></h1>
+      <p class="hero-desc">
+        Website ini dibuat sebagai portofolio tugas dan materi kuliah Kecerdasan Buatan.
+        Semoga bermanfaat dan menginspirasi! 🌱
+      </p>
+      <!-- Tombol motivasi acak -->
+      <button class="btn-motivasi" id="btnMotivasi">💬 Klik Motivasi</button>
+      <div class="motivasi-box" id="motivasiBox" style="display:none;"></div>
     </div>
-  </nav>
+    <div class="hero-deco"></div>
+  </section>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
-
-    <!-- SECTION: Home -->
-    <section id="home" class="section hero-section">
-      <div class="hero-text">
-        <p class="greeting">Halo, salam kenal! 👋</p>
-        <h1>Selamat Datang di<br/><span>Website Tugas Kuliah</span></h1>
-        <p class="hero-sub">
-          Ini adalah halaman pribadi Nova Suci Safitri untuk mata kuliah
-          <strong>Kecerdasan Buatan</strong>, Teknik Informatika G2023.
-        </p>
-        <!-- Tombol motivasi acak -->
-        <button class="btn-motivasi" id="btnMotivasi">
-          <i class="fa-solid fa-lightbulb"></i> Kata Motivasi
-        </button>
-        <div class="motivasi-box" id="motivasiBox" style="display:none;"></div>
-      </div>
-    </section>
-
-    <!-- SECTION: Tentang Saya -->
-    <section id="tentang" class="section">
+  <!-- ===== SECTION: TENTANG SAYA ===== -->
+  <section class="section" id="tentang">
+    <div class="container">
       <h2 class="section-title">Tentang Saya</h2>
-      <div class="about-card">
-        <!-- Foto profil bulat — ganti src dengan foto sendiri -->
-        <div class="foto-wrap">
+      <div class="tentang-card">
+        <!-- Foto profil bulat (gunakan foto sendiri jika ada) -->
+        <div class="foto-wrapper">
           <img
-            src="https://api.dicebear.com/7.x/avataaars/svg?seed=nova&backgroundColor=b6e3f4"
+            src="https://ui-avatars.com/api/?name=Nova+Suci+Safitri&background=a8c9a0&color=fff&size=200&font-size=0.35&rounded=true"
             alt="Foto Nova Suci Safitri"
             class="foto-profil"
           />
         </div>
         <div class="biodata">
-          <h3>Nova Suci Safitri</h3>
-          <table class="bio-table">
-            <tr><td><i class="fa-solid fa-id-card"></i> NIM</td><td>: 23110369</td></tr>
-            <tr><td><i class="fa-solid fa-laptop-code"></i> Jurusan</td><td>: Teknik Informatika</td></tr>
-            <tr><td><i class="fa-solid fa-users"></i> Kelas</td><td>: G2023</td></tr>
-            <tr><td><i class="fa-solid fa-brain"></i> Mata Kuliah</td><td>: Kecerdasan Buatan</td></tr>
-            <tr><td><i class="fa-solid fa-university"></i> Semester</td><td>: 4 (Genap)</td></tr>
+          <h3 class="nama">Nova Suci Safitri</h3>
+          <table class="tabel-biodata">
+            <tr>
+              <td>Jurusan</td>
+              <td>:</td>
+              <td>Teknik Informatika</td>
+            </tr>
+            <tr>
+              <td>Kelas</td>
+              <td>:</td>
+              <td>G2023</td>
+            </tr>
+            <tr>
+              <td>NIM</td>
+              <td>:</td>
+              <td>23110369</td>
+            </tr>
+            <tr>
+              <td>Mata Kuliah</td>
+              <td>:</td>
+              <td>Kecerdasan Buatan</td>
+            </tr>
+            <tr>
+              <td>Universitas</td>
+              <td>:</td>
+              <td>Universitas Contoh</td>
+            </tr>
           </table>
-          <p class="bio-desc">
-            Mahasiswa aktif yang tertarik di bidang kecerdasan buatan, machine learning,
-            dan pengembangan aplikasi. Semangat belajar dan terus berkembang!
-          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION: Tugas Kuliah -->
-    <section id="tugas" class="section alt-bg">
+  <!-- ===== SECTION: TUGAS KULIAH ===== -->
+  <section class="section section-alt" id="tugas">
+    <div class="container">
       <h2 class="section-title">Tugas Kuliah</h2>
+      <p class="section-desc">Kumpulan tugas mata kuliah Kecerdasan Buatan</p>
+      <!-- Grid card tugas -->
       <div class="card-grid">
 
         <div class="card">
-          <div class="card-icon">📝</div>
-          <h3>Tugas 1</h3>
-          <p class="card-tag">Pengantar AI</p>
-          <p>Makalah tentang sejarah dan perkembangan kecerdasan buatan dari masa ke masa.</p>
-          <span class="badge badge-done">Selesai</span>
+          <div class="card-header">Tugas 1</div>
+          <div class="card-date">📅 10 Februari 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
         </div>
 
         <div class="card">
-          <div class="card-icon">🤖</div>
-          <h3>Tugas 2</h3>
-          <p class="card-tag">Algoritma Pencarian</p>
-          <p>Implementasi algoritma BFS dan DFS untuk penyelesaian masalah sederhana.</p>
-          <span class="badge badge-progress">Dikerjakan</span>
+          <div class="card-header">Tugas 2</div>
+          <div class="card-date">📅 24 Februari 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
         </div>
 
         <div class="card">
-          <div class="card-icon">📊</div>
-          <h3>Tugas 3</h3>
-          <p class="card-tag">Machine Learning</p>
-          <p>Eksplorasi konsep supervised learning menggunakan dataset sederhana.</p>
-          <span class="badge badge-pending">Belum</span>
+          <div class="card-header">Tugas 3</div>
+          <div class="card-date">📅 10 Maret 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Tugas 4</div>
+          <div class="card-date">📅 24 Maret 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Tugas 5</div>
+          <div class="card-date">📅 7 April 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Tugas 6</div>
+          <div class="card-date">📅 21 April 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION: Materi Kuliah -->
-    <section id="materi" class="section">
+  <!-- ===== SECTION: MATERI KULIAH ===== -->
+  <section class="section" id="materi">
+    <div class="container">
       <h2 class="section-title">Materi Kuliah</h2>
+      <p class="section-desc">Materi yang dipelajari selama perkuliahan Kecerdasan Buatan</p>
+      <!-- Grid card materi -->
       <div class="card-grid">
 
         <div class="card">
-          <div class="card-icon">📖</div>
-          <h3>Materi 1</h3>
-          <p class="card-tag">Dasar-Dasar AI</p>
-          <p>Pengenalan konsep AI, sejarah, aplikasi nyata, dan cabang ilmu yang terkait.</p>
+          <div class="card-header">Materi 1</div>
+          <div class="card-date">📅 3 Februari 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
         </div>
 
         <div class="card">
-          <div class="card-icon">🔍</div>
-          <h3>Materi 2</h3>
-          <p class="card-tag">Representasi Pengetahuan</p>
-          <p>Cara merepresentasikan pengetahuan dalam sistem cerdas menggunakan logika dan aturan.</p>
+          <div class="card-header">Materi 2</div>
+          <div class="card-date">📅 17 Februari 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
         </div>
 
         <div class="card">
-          <div class="card-icon">🧠</div>
-          <h3>Materi 3</h3>
-          <p class="card-tag">Neural Network</p>
-          <p>Konsep jaringan saraf tiruan sebagai dasar deep learning modern.</p>
+          <div class="card-header">Materi 3</div>
+          <div class="card-date">📅 3 Maret 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Materi 4</div>
+          <div class="card-date">📅 17 Maret 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Materi 5</div>
+          <div class="card-date">📅 31 Maret 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">Materi 6</div>
+          <div class="card-date">📅 14 April 2025</div>
+          <a href="#" class="btn-link">Lihat Dokumen</a>
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION: Kontak -->
-    <section id="kontak" class="section alt-bg">
+  <!-- ===== SECTION: KONTAK ===== -->
+  <section class="section section-alt" id="kontak">
+    <div class="container">
       <h2 class="section-title">Kontak</h2>
-      <div class="kontak-wrap">
+      <p class="section-desc">Hubungi saya melalui informasi berikut</p>
+      <div class="kontak-grid">
         <div class="kontak-item">
-          <i class="fa-solid fa-envelope"></i>
-          <div>
-            <p class="kontak-label">Email</p>
-            <a href="mailto:novasucisafitri@email.com">novasucisafitri@email.com</a>
-          </div>
+          <div class="kontak-label">Email</div>
+          <a href="mailto:novasucisafitri@email.com" class="kontak-value">novasucisafitri@email.com</a>
         </div>
         <div class="kontak-item">
-          <i class="fa-solid fa-phone"></i>
-          <div>
-            <p class="kontak-label">Nomor HP</p>
-            <a href="tel:+6281234567890">+62 812-3456-7890</a>
-          </div>
-        </div>
-        <div class="kontak-item">
-          <i class="fa-brands fa-instagram"></i>
-          <div>
-            <p class="kontak-label">Instagram</p>
-            <a href="#">@novasucisafitri</a>
-          </div>
+          <div class="kontak-label">WhatsApp / HP</div>
+          <a href="tel:+6281234567890" class="kontak-value">+62 812-3456-7890</a>
         </div>
       </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>© 2024 Nova Suci Safitri &mdash; Teknik Informatika G2023</p>
-    <p style="margin-top:4px; font-size:0.8rem; opacity:0.7;">Dibuat untuk tugas mata kuliah Kecerdasan Buatan</p>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Nova Suci Safitri · Teknik Informatika · Kecerdasan Buatan</p>
+    </div>
   </footer>
 
   <!-- Tombol kembali ke atas -->
-  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
-    <i class="fa-solid fa-chevron-up"></i>
-  </button>
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
 
   <script src="script.js"></script>
 </body>
