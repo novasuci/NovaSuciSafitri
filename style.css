@@ -4,13 +4,13 @@
    ============================= */
 :root {
   --hijau-utama: #558563;     /* Hijau sage utama */
-  --hijau-muda: #6d8071;      /* Hijau pastel latar */
+  --hijau-muda: #638a6b;      /* Hijau pastel latar */
   --hijau-hover: #568565;     /* Hijau sedikit gelap untuk hover */
   --putih: #6a8670;
   --abu-terang: #f5f7f5;      /* Latar section alternatif */
-  --abu-teks: #555e55;        /* Warna teks utama */
+  --abu-teks: #0b0c0b;        /* Warna teks utama */
   --abu-tipis: #e0e8e0;       /* Border/garis halus */
-  --hitam-lembut: #2d3a2d;    /* Judul dan teks gelap */
+  --hitam-lembut: #060606;    /* Judul dan teks gelap */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Nunito', sans-serif;
   --radius: 12px;
