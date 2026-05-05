@@ -3,19 +3,22 @@
    CSS VARIABLES & RESET
    ============================= */
 :root {
-  --hijau-utama: #416993;     /* Hijau sage utama */
-  --hijau-muda: #6f95a8;      /* Hijau pastel latar */
-  --hijau-hover: #1f2733;     /* Hijau sedikit gelap untuk hover */
-  --putih: #1f4157;
-  --abu-terang: #080a0b;      /* Latar section alternatif */
-  --abu-teks: #010607;        /* Warna teks utama */
-  --abu-tipis: #7c8ea3;       /* Border/garis halus */
-  --hitam-lembut: #060606;    /* Judul dan teks gelap */
+  --biru-utama: #49a4ff;      /* Biru langit utama */
+  --biru-muda: #eaf4ff;       /* Background lembut */
+  --biru-hover: #3399ff;      /* Hover sedikit lebih gelap */
+
+  --putih: #ffffff;           /* FIX: harus putih beneran */
+  --abu-terang: #f5f9ff;      /* Background section */
+  --abu-teks: #333333;        /* Teks nyaman dibaca */
+  --abu-tipis: #d6e6f5;       /* Border halus */
+  --hitam-lembut: #1a1a1a;
+
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Nunito', sans-serif;
   --radius: 12px;
-  --shadow: 0 2px 12px rgba(24, 35, 41, 0.12);
+  --shadow: 0 2px 12px rgba(77, 166, 255, 0.15);
   --transition: 0.25s ease;
+}
 }
 
 /* Reset dasar */
@@ -252,7 +255,7 @@ img {
   font-weight: 700;
   cursor: pointer;
   transition: background var(--transition), transform var(--transition);
-  box-shadow: 0 4px 14px rgba(106,171,126,0.3);
+  box-shadow: 0 4px 14px rgba(106, 157, 171, 0.3);
 }
 
 .btn-motivasi:hover {
