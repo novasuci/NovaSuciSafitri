@@ -3,15 +3,15 @@
    CSS VARIABLES & RESET
    ============================= */
 :root {
-  --hijau-utama: #7fbf9f;     /* hijau sage soft */
-  --hijau-muda: #e8f5ee;      /* hijau sangat muda (background) */
-  --hijau-hover: #5aa37d;     /* sedikit lebih gelap */
+  --hijau-utama: #7fbf9f;     /* warna utama */
+  --hijau-muda: #e8f5ee;      /* background soft */
+  --hijau-hover: #5aa37d;
 
   --putih: #ffffff;           /* PUTIH BENERAN */
-  --abu-terang: #f6fbf8;      /* background section */
-  --abu-teks: #2f3e34;        /* teks soft, nggak hitam */
-  --abu-tipis: #d6e8dd;       /* border halus */
-  --hitam-lembut: #1f2a24;    /* judul */
+  --abu-terang: #f6fbf8;      /* section */
+  --abu-teks: #2f3e34;
+  --abu-tipis: #d6e8dd;
+  --hitam-lembut: #1f2a24;
 
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Nunito', sans-serif;
@@ -62,12 +62,14 @@ img {
    HEADER & NAVIGASI
    ============================= */
 .header {
-  position: sticky;         /* Header menempel saat scroll */
+  position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--putih);
-  border-bottom: 1px solid var(--abu-tipis);
-  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+
+  background: linear-gradient(135deg, #a8d5ba, #cdeee0);
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .header-inner {
@@ -84,7 +86,7 @@ img {
   gap: 8px;
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  color: var(--hitam-lembut);
+   color: #1f2a24;
   font-weight: 700;
 }
 
@@ -103,7 +105,7 @@ img {
   border-radius: 20px;
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--abu-teks);
+  color: #1f2a24;
   transition: background var(--transition), color var(--transition);
 }
 
@@ -177,7 +179,7 @@ img {
 }
 
 .section-desc {
-  color: #6083b0;
+  color: #070a08;
   margin-bottom: 32px;
   margin-top: 6px;
   font-size: 0.95rem;
@@ -187,7 +189,7 @@ img {
    HERO / HOME
    ============================= */
 .hero {
-  background: linear-gradient(135deg, #ffffff 0%, #b6c6d6 100%);
+  background: linear-gradient(135deg, #f6fbf8 0%, #dff3e7 100%);
   position: relative;
   overflow: hidden;
   min-height: 88vh;
@@ -237,7 +239,9 @@ img {
   top: -80px;
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, rgba(106,171,126,0.18) 0%, transparent 70%);
+  .hero-deco {
+  background: radial-gradient(circle, #cdeee0 0%, transparent 70%);
+}
   border-radius: 50%;
   pointer-events: none;
 }
@@ -258,9 +262,10 @@ img {
 }
 
 .btn-motivasi:hover {
-  background: var(--hijau-hover);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #64ba8f, #a8d8ba);
 }
+  transform: translateY(-2px);
+
 
 /* Kotak munculnya teks motivasi */
 .motivasi-box {
@@ -448,7 +453,7 @@ img {
    ============================= */
 .footer {
   background: var(--hitam-lembut);
-  color: #032453;
+  color: #33613e;
   text-align: center;
   padding: 22px 20px;
   font-size: 0.88rem;
@@ -469,7 +474,7 @@ img {
   height: 44px;
   font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(106,171,126,0.35);
+  box-shadow: 0 4px 14px rgba(90, 138, 118, 0.986);
   transition: opacity var(--transition), transform var(--transition), background var(--transition);
   opacity: 0;               /* Tersembunyi secara default */
   pointer-events: none;
@@ -508,11 +513,11 @@ img {
     border-bottom: 1px solid var(--abu-tipis);
     padding: 12px 20px;
     gap: 4px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    box-shadow: 0 4px 14px rgb(109, 175, 131);
   }
 
   /* Tampilkan nav saat class 'open' ditambahkan via JS */
-  .nav.open {
+  .nav.open {5f8170 
     display: flex;
   }
 
