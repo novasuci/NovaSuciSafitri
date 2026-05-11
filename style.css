@@ -3,9 +3,9 @@
    CSS VARIABLES & RESET
    ============================= */
 :root {
-  --hijau-utama: #7fbf9f;     /* warna utama */
+  --hijau-utama: #5d826f;     /* warna utama */
   --hijau-muda: #e8f5ee;      /* background soft */
-  --hijau-hover: #5aa37d;
+  --hijau-hover: #5d826f;
 
   --putih: #ffffff;           /* PUTIH BENERAN */
   --abu-terang: #f6fbf8;      /* section */
